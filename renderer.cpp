@@ -162,7 +162,7 @@ float Renderer::Picking(double newx, double newy)	//change return value from boo
 		{
 			Eigen::Vector3f hit = getSpecificPoint(view, scn->data().F, scn->data().V, fid, bc);
 			Eigen::Vector3f origin = core().camera_center;
-			distance = (hit - origin)(2) * -1; // .norm();
+			distance = (hit - origin)(2) * -1; // (2) for z coordinate, -1 because the camera is pointed at -Z direction
 			return distance;
 		}
 		return INFINITY;
